@@ -43,4 +43,4 @@ main()
     test y={"Very Good!",NULL};
     cout<<"y.str:"<<y.str<<endl;
     cout<<"y.ip:"<<y.ip<<endl;
-}#endif
+}
