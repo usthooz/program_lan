@@ -1,29 +1,18 @@
-/*指针基础*/
 #include<iostream>
 using namespace std;
 main()
 {
-    //声明变量和指针变量
-    int a,b,c,*ip;
+    //声明指针数组
+    char *colors[]={"Red","Blue","Yellow","Green"}; 
+    //指向指针的指针变量
+    char **pt;          
  
-    //指针变量ip指向变量a
-    a=100;
-    ip=&a;        //使指针变量 ip 指向变量a
-    cout<<"a="<<a<<endl;
-    cout<<"*ip="<<*ip<<endl;
-    cout<<"ip="<<ip<<endl;//地址
- 
-    //指针变量ip指向变量b
-    ip=&b;        //使指针变量 ip 指向变量b
-    b=200;
-    cout<<"b="<<b<<endl;
-    cout<<"*ip="<<*ip<<endl;
-    cout<<"ip="<<ip<<endl;
- 
-    //指针变量ip指向变量c
-    ip=&c;        //使指针变量 ip 指向变量b
-    *ip=a+b;
-    cout<<"c="<<c<<endl;
-    cout<<"*ip="<<*ip<<endl;
-    cout<<"ip="<<ip<<endl;
+    //通过指向指针的变量访问其指向的内容
+    pt=colors;
+    for (int i=0;i<=3;i++) {
+        cout<<"pt="<<pt<<endl;
+        cout<<"*pt="<<*pt<<endl;
+        cout<<"**pt="<<**pt<<endl;
+        pt++;
+    }
 }
