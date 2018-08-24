@@ -6,7 +6,8 @@ void Fun(int a[],int b)
 {
       for(int i=0; i < b; i++)
       {
-            (*a)++;
+		(*a)++;
+		a++;
 	}
 }
 
