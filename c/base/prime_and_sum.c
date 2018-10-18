@@ -17,16 +17,15 @@ int isPrime(int n)
 
 int main()
 {
-    int i,sum,arrSize,num;
+    int sum,arrSize,num;
     int arr[100];
     //遍历
-    for(i = 2; i <= 100; i ++)
+    for(int i = 2; i <= 100; i ++)
     {
-        // 1~100求和
-        sum += i;
-        // 1~100 的所有素数
+        // 判断是否是素数
         if(isPrime(i))
         {
+            // 是素数，加到数组中
             arr[arrSize++]=i;
         }
     }
@@ -40,6 +39,13 @@ int main()
     printf("\n");
     printf("1~100所有素数个数为: %d\n",arrSize);
     printf("1~100所有素数的和为: %d\n",num);
-    printf("1~100的和为: %d\n",sum+1);
+
+    // 1~100求和
+    for(int i = 1; i <= 100; i ++)
+    {
+        // 加上
+        sum += i;
+    }
+    printf("1~100的和为: %d\n",sum);
     return 0;
 }
