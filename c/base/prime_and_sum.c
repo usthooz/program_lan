@@ -40,6 +40,6 @@ int main()
     printf("\n");
     printf("1~100所有素数个数为: %d\n",arrSize);
     printf("1~100所有素数的和为: %d\n",num);
-    printf("1~100的和为: %d\n",sum);
+    printf("1~100的和为: %d\n",sum+1);
     return 0;
 }
