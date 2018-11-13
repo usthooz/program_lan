@@ -16,8 +16,15 @@ public class TestLogger {
         System.out.println("\033[35;4m" + "我是什么色-Faltf" + "\033[0m"); 
 
         ColorOut(36,"测试一下","\033[",";4m","\033[0m");
+        String result = colorize(36, "测试的人", "\033[", ";4m","\033[0m");
+        System.out.println(result);
     } 
     public static void ColorOut(int colorCode,String text, String colorFormatOne, String colorFormatTwo, String colorFormatAfter){
         System.out.println(""+colorFormatOne+""+colorCode+""+colorFormatTwo+""+text+""+colorFormatAfter+"");
     }
+
+    public static String colorize(int colorCode, String str,String colorFormatBeforeOne, String colorFormatBeforeTwo, String colorFormatAfter) {
+        return colorFormatBeforeOne + colorCode + colorFormatBeforeTwo + str + colorFormatAfter;
+    }
+
 }
