@@ -2,6 +2,14 @@
 #include "socketapi.h"
 using namespace std;
 
+/*
+    build and run
+    g++ -c logic.cpp
+    g++ -c socketapi.cpp
+    g++ socketapi.o logic.o -o api
+    ./api
+*/
+
 int main()
 {
     cout << "Start socket api server." << endl;
