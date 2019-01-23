@@ -29,3 +29,11 @@ def cacheSet(request):
 def cacheGet(request):
     val = cache.get("key1")
     return HttpResponse(""+val+"")
+
+def paramg(request):
+    idg = request.GET.get('id')
+    return HttpResponse("idg: "+idg+"")
+
+def paramp(request):
+    idp = request.POST.get('id')
+    return HttpResponse("idp: " + idp + "")
