@@ -106,6 +106,8 @@ def main():
         col_C = 'C%s' % (name.index(i) + 1)
         col_D = 'D%s' % (name.index(i) + 1)
         ws1[col_A] = i
+        strinfo = re.compile('人评价')
+        m = strinfo.sub('', m)
         ws1[col_B] = m
         ws1[col_C] = o
         ws1[col_D] = p
