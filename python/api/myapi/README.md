@@ -12,5 +12,5 @@ python3.7 manage.py runserver
 http://127.0.0.1:8000/logic/figure/?name=usthooz
 ```
 
-- 逻辑
+- 逻辑  
 逻辑存放在logic/views.py文件figure函数里面，在里面添加逻辑就可以
