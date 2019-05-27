@@ -10,10 +10,10 @@ import (
 )
 
 type Test struct {
-	AderId     string `json:"ader_id"`
-	Height     string `json:"height"`
-	Width      string `json:"width"`
-	TargetType int    `json:"target_type"`
+	AderId     string      `json:"ader_id"`
+	Height     interface{} `json:"height"`
+	Width      string      `json:"width"`
+	TargetType int         `json:"target_type"`
 }
 
 type Resp struct {
@@ -26,7 +26,7 @@ type Resp struct {
 func main() {
 	testt := &Test{
 		AderId:     "1",
-		Height:     "640",
+		Height:     nil,
 		Width:      "960",
 		TargetType: 3,
 	}
@@ -58,6 +58,9 @@ func InterfaceToInt32(v interface{}) int32 {
 		err error
 	)
 	vType := reflect.TypeOf(v)
+	if vType == nil {
+		return int32(res)
+	}
 	ozlog.Infof("vType-> %v", vType)
 	switch vType.Name() {
 	case "string":
