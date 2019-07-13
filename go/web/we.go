@@ -5,7 +5,6 @@ import (
 	"io"
 	"log"
 	"net/http"
-	"time"
 )
 
 func main() {
@@ -21,7 +20,6 @@ func main() {
 }
 
 func hello(rsp http.ResponseWriter, req *http.Request) {
-	time.Sleep(time.Duration(1000) * time.Millisecond)
 	io.WriteString(rsp, "hello")
 }
 
