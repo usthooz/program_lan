@@ -8,6 +8,7 @@ import (
 )
 
 func main() {
+	log.Println("Server Listen: 8080")
 	// 路由规则
 	http.HandleFunc("/hello", hello)
 	http.HandleFunc("/oozgo", oozgoCon)
@@ -20,6 +21,7 @@ func main() {
 }
 
 func hello(rsp http.ResponseWriter, req *http.Request) {
+	log.Println("/hello")
 	io.WriteString(rsp, "hello")
 }
 
@@ -29,6 +31,7 @@ type Context struct {
 }
 
 func oozgoCon(rsp http.ResponseWriter, req *http.Request) {
+	log.Println("/oozgo")
 	oozgo(&Context{
 		Request:  req,
 		Response: rsp,
