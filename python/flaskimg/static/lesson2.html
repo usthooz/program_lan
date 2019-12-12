@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>测试结果集加载</title>
+  <link rel="stylesheet" href="./static/lib/element.css">
+  <style type="text/css">
+  .title {
+    margin: 20px 0;
+  }
+  .img-box img {
+    width: 100%;
+    /*max-height: 25vw;*/
+  }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <el-button type="primary" @click="getImage">获取图片</el-button>
+    <div v-for="(file, index) in imageData">
+      <el-tag class="title" type="success">{{index}}</el-tag>
+      <el-row>
+        <el-col :span="6" v-for="img in file">
+          <div class="img-box">
+            <img :src="img.path">
+            <!-- <el-tag type="info">{{img.filename}}</el-tag> -->
+          </div>
+        </el-col>
+      </el-row>
+    </div>
+  </div>
+</body>
+<script type="text/javascript" src="./static/lib/vue.min.js"></script>
+<script src="./static/lib/element.js"></script>
+<script type="text/javascript" src="./static/lib/axios.min.js"></script>
+<script type="text/javascript">
+  var vm = new Vue({
+    el: '#app',
+    data: {
+      imageData: {}
+    },
+    mounted() {
+      
+    },
+    methods: {
+      getImage() {
+        let self = this;
+
+        // request
+        axios.get('/get_data', {}).then(function(response) {
+           if (response.status === 200) {
+            //  success
+             let data = response.data;
+             self.$set(self.$data, 'imageData', data)
+           } else {
+             console.log("Request http status not 200!")
+          }
+         }).catch(function(error) {
+           console.log(error)
+         })
+      }
+    }
+  })
+</script>
+</html>
